@@ -138,5 +138,19 @@ function timerReset(){
 	startTimer();
 }
 
+/*-------------------Moves----------------------*/
+
+//increment the move counter
+const movesNum = document.querySelector('.moves');
+let moves = 0;
+movesNum.innerHTML="Moves"
+function countMoves(){
+	moves++;
+	//adding the number moves into the screen
+	movesNum.innerHTML = moves + " Moves";
+	//calling stars function
+	countStars();
+}
+
 
 
