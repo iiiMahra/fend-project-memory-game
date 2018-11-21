@@ -58,5 +58,33 @@ function creatingCards(){
 	}
 }
 
+/*-------------------Show cards-----------------*/
+//set up the event listener for a card
+function clickEvent(card){
+	card.addEventListener('click', function(){	
+//display the card's symbol		
+		if(openCards.length === 1){
+			card.classList.add('show');
+			card.classList.add('open');
+			card.classList.add('oneClick');
+//add the card to a *list* of "open" cards
+			openCards.push(this); 
+			//call countMoves function
+			countMoves();
+//calling checking function
+			const firstCard = openCards[0];
+			const newCard = this;
+			checking(newCard, firstCard);
+		}
+		else{
+			card.classList.add('show');
+			card.classList.add('open');
+			card.classList.add('oneClick');
+			openCards.push(this); 
+		}
+	});
+
+}
+
 
 
