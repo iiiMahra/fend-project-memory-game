@@ -152,5 +152,27 @@ function countMoves(){
 	countStars();
 }
 
+/*-------------------Rating----------------------*/
+
+const starsNum = document.querySelector('.stars');
+starsNum.innerHTML =`<li><i class="fa fa-star"></i></li>
+					<li><i class="fa fa-star"></i></li>
+					<li><i class="fa fa-star"></i></li>`;
+let score = 3;
+function countStars(){
+	if(moves > 10 && moves <= 16 ){
+		starsNum.innerHTML = 
+		`<li><i class="fa fa-star"></i></li>
+  		<li><i class="fa fa-star"></i></li>`;
+  		score = 2;
+	}
+	else if(moves >= 17){
+		starsNum.innerHTML = 
+		`<li><i class="fa fa-star"></i></li>`;
+		score = 1;
+	}
+}
+
+
 
 
