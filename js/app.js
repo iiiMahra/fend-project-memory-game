@@ -116,6 +116,27 @@ function checking(newCard, firstCard){
 			popup(); 
 }
 
+/*-------------------score-panel--------------------------*/
+/*-------------------Timer----------------------*/
+const timer = document.querySelector('.timer');
+let theTimer;
+timer.innerHTML = "Timer: 0 sec";
+let second = 0;
+
+// start the timer
+function startTimer(){
+	theTimer = setInterval (function(){
+		second++;
+		timer.innerHTML = "Timer: "+second+" sec";
+	},1000);
+}
+// reset timer
+function timerReset(){
+	second = 0;
+	timer.innerHTML = "Timer: "+second+" sec";
+	clearInterval(theTimer);
+	startTimer();
+}
 
 
 
