@@ -86,5 +86,36 @@ function clickEvent(card){
 
 }
 
+/*-------------------Cards checking-----------------*/
+
+//check to see if the two cards match
+function checking(newCard, firstCard){
+		if(newCard.innerHTML === firstCard.innerHTML){
+			newCard.classList.add('match');
+			firstCard.classList.add('match');
+//add the matched cards into the array
+			matching.push(newCard);
+			matching.push(firstCard);			
+//this will empty the array so new cards added to it
+			openCards=[];
+			}
+//if the cards do not match
+		else {
+			setTimeout( function(){
+				
+				newCard.classList.remove('show');
+				newCard.classList.remove('open');
+				newCard.classList.remove('oneClick');
+				firstCard.classList.remove('show');
+				firstCard.classList.remove('open');
+				firstCard.classList.remove('oneClick');
+			}, 800);
+			openCards=[];	
+			}
+//when all cards all matched call popup function
+			popup(); 
+}
+
+
 
 
