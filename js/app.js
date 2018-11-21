@@ -41,5 +41,22 @@ function shuffle(array) {
     return array;
 }
 
+/*-------------------Create cards-----------------*/
+const cardListContainer = document.querySelector('.deck');
+function creatingCards(){
+//shuffle the list of cards
+	shuffle(cardList);
+//loop through each card and create its HTML	
+	for(let i = 0; i < cardList.length; i++){
+		const card = document.createElement('li');
+		card.innerHTML = "<i class='" + cardList[i] + "'</i>";
+		card.classList.add('card');
+//add each card's HTML to the page		
+		cardListContainer.appendChild(card);
+//call click event function
+		clickEvent(card); 
+	}
+}
+
 
 
