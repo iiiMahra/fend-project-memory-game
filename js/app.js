@@ -195,6 +195,26 @@ playAgain.addEventListener('click', function(){
   		<li><i class="fa fa-star"></i></li>
   		<li><i class="fa fa-star"></i></li>`;
 });
+/*-------------------popup----------------------*/
+//if all cards have matched, display a message with the final score 
+function popup(){
+	if(cardList.length === matching.length){
+		//when all cards all matched the timer will stop
+		clearInterval(theTimer);
+		sweetAlert();
+	}	
+}
 
+function sweetAlert(){
+swal({// the alert from https://sweetalert2.github.io/
+        title: 'Congratulations!!! you won!',
+        type: 'success',
+       	text: "With " + moves + " Moves " + " , " + score + " stars " + " and " + second+" sec",
+        allowOutsideClick: false,
+       	confirmButtonText: 'Play Again',
+        confirmButtonColor: '#0000FF',
+    });
+
+}
 
 
