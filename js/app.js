@@ -172,7 +172,29 @@ function countStars(){
 		score = 1;
 	}
 }
+/*-------------------Restart----------------------*/
+const playAgain = document.querySelector('.restart');
+playAgain.addEventListener('click', function(){
+//remove old game
+	cardListContainer.innerHTML= "";
+// call creatingCards function to recreate the game
+	creatingCards();
+//empty the arrays from the old game
+	matching = [];
+	openCards=[];	
 
+//reset the moves counter
+	moves = '';
+	movesNum.innerHTML = moves + " Moves";
+
+//reset timer
+	timerReset();
+//reset stars
+	starsNum.innerHTML = 
+		`<li><i class="fa fa-star"></i></li>
+  		<li><i class="fa fa-star"></i></li>
+  		<li><i class="fa fa-star"></i></li>`;
+});
 
 
 
