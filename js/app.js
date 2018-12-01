@@ -216,5 +216,5 @@ swal({// the alert from https://sweetalert2.github.io/
     });
 
 }
-
-
+creatingCards();
+startTimer();
